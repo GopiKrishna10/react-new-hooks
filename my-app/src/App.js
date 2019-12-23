@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import UserTable from './tables/UserTable';
 import AddUserForm from './forms/AddUserForm';
 import EditUserForm from './forms/EditUserForm';
+// import { ColorContext } from './colorContext';
 import './App.css';
 
 const App = () => {
@@ -35,6 +36,11 @@ const App = () => {
     setEditing(false);
     setUsers(users.map(user => (user.id === id ? updatedUser : user)))
   }
+  // const colors = {
+  //   blue: "#03619c",
+  //   yellow: "#8c8f03",
+  //   red: "#9c0312"
+  // }
   return (
     <div className="container">
       <h1>CRUD App with Hooks</h1>
@@ -59,7 +65,9 @@ const App = () => {
         </div>
         <div className="flex-large">
           <h2>View Users</h2>
-          <UserTable users={users} deleteUser={deleteUser} editRow={editRow} />
+          {/*<ColorContext.Provider value={colors}>*/}
+            <UserTable users={users} deleteUser={deleteUser} editRow={editRow} />
+          {/*</ColorContext.Provider>*/}
         </div>
       </div>
     </div>

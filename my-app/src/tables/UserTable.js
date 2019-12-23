@@ -1,4 +1,5 @@
 import React from 'react'
+import {ColorContext} from '../colorContext';
 
 const UserTable = props => {
 
@@ -9,6 +10,10 @@ const UserTable = props => {
         props.editRow(user)
     }
     return (
+        <div>
+        {/*<ColorContext.Consumer>
+            {colors => <div style={colors.blue}>Hello Dude</div>}
+        </ColorContext.Consumer>*/}
         < table >
             <thead>
                 <tr>
@@ -38,6 +43,7 @@ const UserTable = props => {
 
             </tbody>
         </table >
+        </div>
     )
 }
 
