@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import UserTable from './tables/UserTable';
 import AddUserForm from './forms/AddUserForm';
 import EditUserForm from './forms/EditUserForm';
-// import { ColorContext } from './colorContext';
+import  UserContext, { UserProvider } from './useContext';
 import './App.css';
 
 const App = () => {
@@ -65,9 +65,9 @@ const App = () => {
         </div>
         <div className="flex-large">
           <h2>View Users</h2>
-          {/*<ColorContext.Provider value={colors}>*/}
+          <UserProvider value={users}>
             <UserTable users={users} deleteUser={deleteUser} editRow={editRow} />
-          {/*</ColorContext.Provider>*/}
+          </UserProvider>
         </div>
       </div>
     </div>
